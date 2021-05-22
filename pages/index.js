@@ -16,11 +16,7 @@ export default function Home() {
             {process.env.NEXT_PUBLIC_SITE_NAME}
           </a>
         </h1>
-        <ul>
-          <li key={1}>Puppy-O</li>
-          <li key={2}>Spots</li>
-          <li key={3}>Bert</li>
-        </ul>
+        <p>Removed List</p>
         <h2>{process.env.NEXT_PUBLIC_URL}</h2>
       </main>
 
