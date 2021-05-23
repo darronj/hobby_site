@@ -16,7 +16,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to{' '}
-          <a href={fixUrl(process.env.NEXT_PUBLIC_URL)}>
+          <a href={fixURL(process.env.NEXT_PUBLIC_URL)}>
             {process.env.NEXT_PUBLIC_SITE_NAME}
           </a>
         </h1>
