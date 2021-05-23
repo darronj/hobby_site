@@ -16,8 +16,8 @@ export default function Home() {
             {process.env.NEXT_PUBLIC_SITE_NAME}
           </a>
         </h1>
-        <p>Removed List</p>
         <h2>{process.env.NEXT_PUBLIC_URL}</h2>
+        <h3>{process.env.NEXT_PUBLIC_SITE_NAME}</h3>
       </main>
 
       <footer className={styles.footer}>
