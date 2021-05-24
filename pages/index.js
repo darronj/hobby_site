@@ -1,7 +1,10 @@
+import { signIn, signOut, useSession } from 'next-auth/client';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const [session, loading] = useSession();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,13 +14,20 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to{' '}
-          <a href={process.env.NEXT_PUBLIC_URL}>
-            {process.env.NEXT_PUBLIC_SITE_NAME}
-          </a>
+          Welcome to {process.env.NEXT_PUBLIC_SITE_NAME}
         </h1>
-        <h2>{process.env.NEXT_PUBLIC_URL}</h2>
-        <h3>{process.env.NEXT_PUBLIC_SITE_NAME}</h3>
+        {!session && (
+          <>
+            Not signed in <br />
+            <button onClick={() => signIn()}>Sign in</button>
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as {session.user.email} <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
       </main>
 
       <footer className={styles.footer}>
