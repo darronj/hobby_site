@@ -21,12 +21,6 @@ const nextOptions = {
   },
   callbacks: {
     async jwt(token, user, account, profile, isNewUser) {
-      console.log(token);
-      console.log(account);
-      console.log(profile);
-      // if (account?.accessToken) {
-      //   token.accessToken = account.accessToken;
-      // }
       if (account?.idToken) {
         token.idToken = account.idToken;
       }
@@ -34,8 +28,6 @@ const nextOptions = {
     },
 
     async session(session, token) {
-      console.log(token);
-      // session.accessToken = token.accessToken;
       session.idToken = token.idToken;
       return session;
     }

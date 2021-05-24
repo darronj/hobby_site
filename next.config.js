@@ -1,5 +1,3 @@
-console.log(process.env.VERCEL_URL);
-
 const getURL = () => {
   const url =
     process?.env?.URL && process.env.URL !== ''
