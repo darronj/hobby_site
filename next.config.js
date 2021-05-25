@@ -8,6 +8,7 @@ const getURL = () => {
   return url.includes('http') ? url : `https://${url}`;
 };
 const URL = getURL();
+console.log(process?.env?.NODE_ENV);
 
 module.exports = {
   env: {
