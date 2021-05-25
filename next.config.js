@@ -9,6 +9,7 @@ const getURL = () => {
 };
 const URL = getURL();
 console.log(process?.env?.NODE_ENV);
+console.log(process?.env?.VERCEL_ENV);
 
 module.exports = {
   env: {
