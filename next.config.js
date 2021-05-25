@@ -1,15 +1,18 @@
 const getURL = () => {
+  if (process?.env?.VERCEL !== '1') {
+    return 'http://localhost:3000';
+  }
+  console.log('on VERCEL');
   const url =
     process?.env?.URL && process.env.URL !== ''
       ? process.env.URL
       : process?.env?.VERCEL_URL && process.env.VERCEL_URL !== ''
       ? process.env.VERCEL_URL
-      : 'http://localhost:3000';
+      : 'http://localhost:3400';
   return url.includes('http') ? url : `https://${url}`;
 };
 const URL = getURL();
 console.log(process?.env?.NODE_ENV);
-console.log(process?.env?.VERCEL_ENV);
 
 module.exports = {
   env: {
